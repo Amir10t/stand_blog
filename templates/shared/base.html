@@ -1,0 +1,26 @@
+{% load render_partial %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{#    <meta name="description" content="">#}
+{#    <meta name="author" content="TemplateMo">#}
+    <title>{% block title %}{% endblock %}</title>
+
+      {% include 'shared/includes/header_reference.html'%}
+
+  </head>
+
+  <body>
+
+    {% include 'shared/includes/side_header.html' %}
+
+    {% block content %}{% endblock %}
+
+    {% render_partial 'home_app.views.site_footer' %}
+
+    {% include 'shared/includes/footer_reference.html' %}
+
+  </body>
+</html>

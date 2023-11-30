@@ -1,0 +1,29 @@
+<div class="col-lg-6">
+  <div class="blog-post">
+    <div class="blog-thumb">
+      <img src="{{ post.image.url }}" alt="">
+    </div>
+    <div class="down-content">
+      <span>Lifestyle</span>
+      <a href="{% url 'detail-page' slug=post.slug %}"><h4>{{ post.title }}</h4></a>
+      <ul class="post-info">
+        <li><a href="#">Admin</a></li>
+        <li><a href="#">{{ post.created_date }}</a></li>
+        <li><a href="#">26 Comments</a></li>
+      </ul>
+      <p>{{ post.short_description }}</p>
+      <div class="post-options">
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="post-tags">
+              <li><i class="fa fa-tags"></i></li>
+              {% for tag in post.category.all %}
+                  <li><a href="#">{{ tag.title }}</a>,</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
